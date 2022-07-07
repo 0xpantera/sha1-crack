@@ -20,7 +20,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     let hash_to_crack = args[2].trim();
     if hash_to_crack.len() != SHA1_HEX_STRING_LENGTH {
-        return Err("sha1 hash is not valid".into());
+        return Err("wrong hash size".into());
     }
 
     let wordlist_file = File::open(&args[1])?;
